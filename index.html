@@ -43,15 +43,13 @@ nav.scrolled .hamburger span{background:var(--navy)}
 .mob-menu a{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--white);letter-spacing:1px;text-transform:uppercase;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.1)}
 .mob-menu a:last-child{border-bottom:none;padding-bottom:0}
 
-/* ── HERO CORRIGIDO ── */
+/* ── HERO ── */
 #hero{
   background:var(--navy);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  min-height:100svh;
+  display:block;
   position:relative;
   overflow:hidden;
+  padding-bottom:0;
 }
 .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 78% 18%,rgba(200,150,10,.22) 0%,transparent 65%),radial-gradient(ellipse 45% 70% at 8% 82%,rgba(200,75,26,.13) 0%,transparent 55%)}
 .hero-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");opacity:.5}
@@ -67,10 +65,9 @@ nav.scrolled .hamburger span{background:var(--navy)}
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  justify-content:flex-end;
-  padding:100px 5vw 3rem;
+  justify-content:center;
+  padding:120px 5vw 3rem;
   max-width:760px;
-  flex:1;
 }
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:'Syne',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--gold-light);margin-bottom:1.4rem;opacity:0;animation:slideUp .6s ease .1s forwards}
 .hero-eyebrow::before{content:'';display:block;width:28px;height:1.5px;background:var(--gold-light)}
@@ -83,7 +80,7 @@ nav.scrolled .hamburger span{background:var(--navy)}
 .hero-logo-display img{width:clamp(160px,20vw,300px);filter:drop-shadow(0 20px 60px rgba(0,0,0,.5));animation:logoHover 5s ease-in-out infinite}
 @keyframes logoHover{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-10px) rotate(1deg)}}
 
-.hero-stats{position:relative;z-index:2;display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:fadeIn .8s ease .85s forwards}
+.hero-stats{position:relative;z-index:2;display:flex;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:fadeIn .8s ease .85s forwards;margin-top:0}
 .hero-stat{flex:1;min-width:120px;padding:1.3rem 5vw;border-right:1px solid rgba(255,255,255,.1);transition:background .25s}
 .hero-stat:last-child{border-right:none}
 .hero-stat:hover{background:rgba(255,255,255,.04)}
@@ -317,17 +314,8 @@ footer strong{color:var(--gold);font-weight:700}
     min-height:unset;
   }
 
-  /* Hero ocupa a tela mas não força altura além do conteúdo */
-  #hero{
-    min-height:100svh;
-    height:auto;
-  }
-
-  .hero-content{
-    padding-top:88px;
-    padding-bottom:2rem;
-    justify-content:flex-end;
-  }
+  #hero{ display:block; }
+  .hero-content{ padding-top:100px; padding-bottom:2rem; }
 }
 
 @media(max-width:640px){
@@ -349,18 +337,8 @@ footer strong{color:var(--gold);font-weight:700}
   .enc-form-card{padding:1.6rem 1.2rem}
   .nova-anim-right{display:none}
 
-  /* Hero ajustado para telas pequenas */
-  #hero{
-    min-height:100svh;
-    height:auto;
-  }
-
-  .hero-content{
-    padding-top:72px;
-    padding-bottom:2rem;
-    justify-content:flex-end;
-    flex:1;
-  }
+  #hero{ display:block; }
+  .hero-content{ padding-top:96px; padding-bottom:2rem; }
 
   .hero-h1{
     font-size:clamp(2.6rem,12vw,4rem);
